@@ -1,0 +1,36 @@
+### Корректный запрос, возвращаем json, русский язык, сжатие brotli
+GET http://127.0.0.1:8000/api
+Accept: application/json, text/html;q=0.9
+Accept-Language: ru, en;q=0.9
+Accept-Encoding: br, gzip;q=0.9
+
+### Корректный запрос, возвращаем json, русский язык, сжатие brotli
+GET http://127.0.0.1:8000/api
+Accept: application/json, text/html;q=0.9
+Accept-Language: ru;q=0.9, en
+Accept-Encoding: br, gzip;q=0.9
+
+### Корректный запрос, возвращаем html, английский язык, сжатие gzip
+GET http://127.0.0.1:8000/api
+Accept: text/html, application/json;q=0.9
+Accept-Language: en, ru;q=0.9
+Accept-Encoding: gzip, br;q=0.9
+
+### Неподдерживаемый язык
+GET http://127.0.0.1:8000/api
+Accept: application/json;q=0.6, text/html;q=0.9
+Accept-Language: fr
+Accept-Encoding: gzip, br;q=0.9
+
+### Неподдерживаемое сжатие
+GET http://127.0.0.1:8000/api
+Accept: application/json;q=0.6, text/html;q=0.9
+Accept-Language: ru, en;q=0.9
+Accept-Encoding: deflate
+
+### Неподдерживаемый тип данных
+GET http://127.0.0.1:8000/api
+Accept: text/json
+Accept-Language: ru, en;q=0.9
+Accept-Encoding: gzip, br;q=0.9
+
