@@ -1,0 +1,4 @@
+### Загрузка профиля пользователя
+GET http://127.0.0.1:8000/api/users/profile
+Authorization: Bearer <<token>>
+Accept: application/json
